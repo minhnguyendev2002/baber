@@ -1,3 +1,7 @@
+:root {
+    --primary-color: #f59721;
+    --second-color: #fec882;
+}
 html, body {
 	margin: 0;
 	padding: 0;
@@ -35,11 +39,11 @@ p {
     font-size: 14px;
 }
 .heading-title {
-    background-color: #feca87;
+    background-color: var(--second-color);
     padding: 15px 30px;
 }
 .heading-title h4 {
-    background-color: #f5941a;
+    background-color: var(--primary-color);
     text-align: center;
     line-height: 35px;
     padding: 5px 20px;
@@ -75,7 +79,7 @@ p {
     font-size: 50px;
 }
 .product-infor > div {
-    background-color: #f5941a;
+    background-color: var(--primary-color);
     color: #FFF;
     margin: 0 auto;
     border-radius: 10px;
@@ -113,7 +117,7 @@ p {
     margin-top: 50px;
 }
 .service-item {
-    border: 2px solid #f5941a;
+    border: 2px solid var(--primary-color);
     padding: 10px 20px;
     min-height: 120px;
     max-height: 120px;
@@ -121,7 +125,7 @@ p {
     border-radius: 5px;
 }
 .service-item-content span {
-    color: #f5941a;
+    color: var(--primary-color);
     font-weight: 600;
 }
 .service-item-content p {
@@ -201,9 +205,9 @@ p {
     margin-left: 10px;
 }
 .form-box {
-    background-color: #feca87;
+    background-color: var(--second-color);
     padding: 20px 10px;
-    border: 2px solid #f5941a;
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
 }
 .clock-box > div {
@@ -216,7 +220,7 @@ p {
     padding: 5px 10px;
     margin-bottom: 25px;
     outline: none;
-    border: 1px solid #f5941a;
+    border: 1px solid var(--primary-color);
     background-color: #FFF;
     border-radius: 5px;
 }
@@ -228,10 +232,10 @@ p {
     margin-bottom: 30px;
     background-color: #FFF;
     border-radius: 5px;outline: none;
-    border: 1px solid #f5941a;
+    border: 1px solid var(--primary-color);
 }
 .form-box button {
-    background-color: #f69b27;
+    background-color: var(--primary-color);
     font-size: 24px;
     color: #FFF;
     padding: 15px 20px;
@@ -242,7 +246,7 @@ p {
 }
 .footer {
     background: rgb(196,118,18);
-    background: linear-gradient(45deg, rgba(196,118,18,1) 0%, rgba(189,150,101,1) 100%);
+    background: linear-gradient(45deg, rgb(230, 139, 20) 0%, rgb(212, 167, 113) 100%);
     opacity: 0.89;
 }
 .footer ul {
@@ -265,7 +269,7 @@ p {
 
 .count-down-style {
     font-size: 21px;
-    background-color: #f5941a;
+    background-color: var(--primary-color);
     color: #FFF;
     padding: 10px;
     border-radius: 8px;
@@ -390,7 +394,7 @@ p {
     font-size: 21px;
     padding: 10px 0px;
     border-radius: 5px;
-    background-color: #f5941a;
+    background-color: var(--primary-color);
     color: #FFF;
     animation: shake 0.8s infinite linear;
 }

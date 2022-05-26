@@ -1,21 +1,11 @@
 // count down
-let countDownDate = new Date("October 20, 2022 24:00:00").getTime();
+let now = 600 * 5.9;
+function countdown() {
+  now--;
+  let minutes = Math.floor(now / 60);
+  let seconds = Math.floor(now % 60);
 
-let x = setInterval(function() {
-  let now = new Date().getTime();
-  let distance = countDownDate - now;
-  
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  if(hours < 10) {
-    document.getElementById('hours').innerHTML = '0' + hours;
-  }
-  else {
-    document.getElementById('hours').innerHTML = hours;
-  }
-
+  document.getElementById('hours').innerHTML = '00';
   if(minutes < 10) {
     document.getElementById('minutes').innerHTML = '0' + minutes;
   }
@@ -29,12 +19,9 @@ let x = setInterval(function() {
   else {
     document.getElementById('seconds').innerHTML = seconds;
   }
+};
 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
+setInterval(countdown, 1000);
 
 const fullname = document.querySelector("#name"),
       phone = document.querySelector("#phone"),
@@ -43,7 +30,6 @@ const fullname = document.querySelector("#name"),
       price = document.querySelector("#price"),
       typeOrder = document.querySelector("#type-order"),
       submitbtn = document.querySelector("#submit-btn");
-let messageCheck = '';
 let sumprice = 0;
 let PRICE = 130000;
 
@@ -66,7 +52,34 @@ count.addEventListener("change", function() {
     count.value = count.value < 0 ? 1 : count.value;
 })
 
+function valid() {
+  let pattern = {
+    name: false,
+    phone: false,
+    adress: false,
+    count: false,
+  }
+  if(fullname.value !== '') {
+    pattern.name = true
+  }
+  if(/^[0-9]{10}$/.test(phone.value)) {
+    pattern.phone = true
+  }
+  if(adress.value !== '') {
+    pattern.adress = true
+  }
+  if(count.value !== '') {
+    pattern.count = true
+  }
+  if(pattern.name && pattern.phone && pattern.adress && pattern.count) {
+    return true;
+  }
+  return false;
+}
+
 submitbtn.addEventListener("click", function(e) {
+  e.preventDefault();
+  if(valid()) {
     let data = {
       name: fullname.value,
       phone: phone.value,
@@ -74,13 +87,16 @@ submitbtn.addEventListener("click", function(e) {
       product: `Gel vuốt tóc x ${count.value}`,
       price: PRICE
     };
-    e.preventDefault();
     axios.post("https://baber-shop-b94f6-default-rtdb.asia-southeast1.firebasedatabase.app/list-order.json", data)
-          .then(res => {
-            alert(`Cảm ơn quý khách đã đặt hàng của chúng tôi`);
-            console.log(res);
-        })
-        .catch(err => console.log(err))
+    .then(res => {
+      alert(`Cảm ơn quý khách đã đặt hàng của chúng tôi`);
+      console.log(res);
+    })
+    .catch(err => console.log(err))
+  }
+  else {
+    alert(`Vui lòng nhập đủ các trường thông tin, Họ tên, SĐT ( 10 số ), Địa chỉ, Số lượng`);
+  }
 })
 
 
