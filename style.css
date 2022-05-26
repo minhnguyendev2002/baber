@@ -6,6 +6,7 @@ html, body {
 	font: inherit;
 	vertical-align: baseline;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 .container, footer {
     max-width: 460px !important;

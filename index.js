@@ -39,15 +39,13 @@ let x = setInterval(function() {
 const fullname = document.querySelector("#name"),
       phone = document.querySelector("#phone"),
       adress = document.querySelector("#adress"),
-    //   combo1 = document.querySelector("#combo_1"),
-    //   combo2 = document.querySelector("#combo_2"),
       count = document.querySelector("#count"),
       price = document.querySelector("#price"),
       typeOrder = document.querySelector("#type-order"),
       submitbtn = document.querySelector("#submit-btn");
 let messageCheck = '';
 let sumprice = 0;
-let PRICE = 0;
+let PRICE = 130000;
 
 count.addEventListener("change", function() {
     if((count.value * 130 ) < 1000) {
@@ -69,16 +67,22 @@ count.addEventListener("change", function() {
 })
 
 submitbtn.addEventListener("click", function(e) {
+    let data = {
+      name: fullname.value,
+      phone: phone.value,
+      adress: adress.value,
+      product: `Gel vuốt tóc x ${count.value}`,
+      price: PRICE
+    };
     e.preventDefault();
-    Email.send({
-        SecureToken : "1b2d0df2-3c45-4d1c-994d-502e0aef96b7",
-        To : 'minhnguyenyh2020@gmail.com',
-        From : "minhnguyendev21@gmail.com",
-        Subject : "This is the subject",
-        Body : "And this is the body"
-    }).then(
-      message => alert(message)
-    );
-    console.log(fullname.value, phone.value, adress.value, count.value, PRICE)
+    axios.post("https://baber-shop-b94f6-default-rtdb.asia-southeast1.firebasedatabase.app/list-order.json", data)
+          .then(res => {
+            alert(`Cảm ơn quý khách đã đặt hàng của chúng tôi`);
+            console.log(res);
+        })
+        .catch(err => console.log(err))
 })
+
+
+
 
