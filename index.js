@@ -3,7 +3,6 @@ let countDownDate = new Date("October 20, 2022 24:00:00").getTime();
 
 let x = setInterval(function() {
   let now = new Date().getTime();
-
   let distance = countDownDate - now;
   
   let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
