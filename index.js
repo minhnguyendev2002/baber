@@ -1,13 +1,14 @@
 // count down
-var countDownDate = new Date("October 20, 2022 24:00:00").getTime();
+let countDownDate = new Date("October 20, 2022 24:00:00").getTime();
 
-var x = setInterval(function() {
-  var now = new Date().getTime();
+let x = setInterval(function() {
+  let now = new Date().getTime();
 
-  var distance = countDownDate - now;
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  let distance = countDownDate - now;
+  
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   if(hours < 10) {
     document.getElementById('hours').innerHTML = '0' + hours;
