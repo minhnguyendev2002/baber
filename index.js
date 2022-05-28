@@ -78,7 +78,7 @@ function valid() {
 }
 
 submitbtn.addEventListener("click", function(e) {
-  e.preventDefault(0);
+  e.preventDefault();
   if(valid()) {
     let data = {
       name: fullname.value,
@@ -93,7 +93,7 @@ submitbtn.addEventListener("click", function(e) {
       console.log(res);
     })
     .catch(err => console.log(err))
-    location.replace("https://tocshopthankyou.netlify.app/");
+    window.location="https://tocshopthankyou.netlify.app/";
   }
   else {
     alert(`Vui lòng nhập đủ các trường thông tin, Họ tên, SĐT ( 10 số ), Địa chỉ, Số lượng`);
