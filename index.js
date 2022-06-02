@@ -77,8 +77,8 @@ function valid() {
   return false;
 }
 
-submitbtn.addEventListener("submit", function(e) {
-  let submit = false;
+submitbtn.addEventListener("click", function(e) {
+  e.preventDefault();
   if(valid()) {
     let data = {
       name: fullname.value,
@@ -94,14 +94,10 @@ submitbtn.addEventListener("submit", function(e) {
     })
     .catch(err => console.log(err))
     window.location="https://tocshopthankyou.netlify.app/";
-
-    submit = true;
   }
   else {
     alert(`Vui lòng nhập đủ các trường thông tin, Họ tên, SĐT ( 10 số ), Địa chỉ, Số lượng`);
   }
-
-  return submit;
 })
 
 
