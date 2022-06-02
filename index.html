@@ -18,7 +18,7 @@
         !function (w, d, t) {
           w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
         
-          ttq.load('CA957MJC77U5A931UA8G');
+          ttq.load('CAC8PSRC77U1DJB8DOA0');
           ttq.page();
         }(window, document, 'ttq');
     </script>
@@ -405,7 +405,7 @@
 
                 <div class="col-12" id="order-form">
                     <div class="form-box">
-                        <form action="#">
+                        <form>
                             <h1 class="text-center">Mua hàng ngay</h1>
                             <h4 class="text-center">Ưu đãi sắp kết thúc</h4>
                             <div class="clock-box d-flex align-items-center my-3">
@@ -427,19 +427,11 @@
                                 </div>
                             </div>
                             <div class="form-controler-input text-center">
-                                <input required id="name" type="text" name="username" placeholder="Họ và tên của bạn">
-                                <input required id="phone" type="text" name="phone" placeholder="Số điện thoại">  
+                                <input id="name" type="text" name="username" placeholder="Họ và tên của bạn">
+                                <input id="phone" type="text" name="phone" placeholder="Số điện thoại">  
                                 <textarea id="adress" name="detailAdress" placeholder="Địa chỉ chi tiết                                                                                  (Xã, Phường, Huyện - Quận, Tỉnh - Thành phố)"></textarea>                    
                             </div>
                             <div>
-                                <!-- <div class="d-flex align-items-center mb-2">
-                                    <input style="width: 20px; height: 20px;" type="checkbox" name="combo_1" id="combo_1">
-                                    <label class="ms-2" for="combo_1">2 chai gel vuốt tóc</label>
-                                </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <input style="width: 20px; height: 20px;" type="checkbox" name="combo_2" id="combo_2">
-                                    <label class="ms-2" for="combo_1">3 chai gel vuốt tóc</label>
-                                </div> -->
                                 <div class="mb-2">
                                     <label for="count">Số lượng: </label>
                                     <input required class="text-center" value="1" min="1" max="99" class="px-2" style="height: 40px; width: 80px;" type="number" id="count" placeholder="Nhập số lượng">
